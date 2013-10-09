@@ -19,7 +19,6 @@ public class UserAuthenticationSteps {
     @When("$user authenticates with a valid email address and password")
     public void whenJaneAuthenticatesWithAValidEmailAddressAndPassword(FrequentFlyerMember user) {
         registeredMember.enterEmailAndPasswordFor(user);
-        registeredMember.signsIn();
     }
 
     @Then("$user should be given access to her account")
@@ -31,7 +30,6 @@ public class UserAuthenticationSteps {
     @Given("$user has logged on")
     public void aUserHasLoggedOnAs(FrequentFlyerMember user) {
         registeredMember.enterEmailAndPasswordFor(user);
-        registeredMember.signsIn();
     }
 
     @When("$user views the home page")

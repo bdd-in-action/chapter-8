@@ -4,10 +4,15 @@ import com.bddinaction.chapter8.jbehave.model.DestinationDeal;
 import com.beust.jcommander.internal.Lists;
 import net.thucydides.core.annotations.findby.By;
 import net.thucydides.core.pages.PageObject;
+import net.thucydides.core.pages.WebElementFacade;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static ch.lambdaj.Lambda.extract;
 import java.util.List;
+
+import static ch.lambdaj.Lambda.on;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class HomePage extends PageObject {
 
@@ -26,12 +31,20 @@ public class HomePage extends PageObject {
         for (WebElement destinationEntry : featuredDestinations) {
             deals.add(destinationDealFrom(destinationEntry));
         }
+
+$("#search").click();
+assertThat($("#search").isEnabled()).isFalse();
+findAll(".featured-destination a");
+$(".featured-destination:nth-child(2) a").click();
+List<String> menuHeadings =
+        extract($(".main-navbar").thenFindAll("li"), on(WebElementFacade.class).getText());
         return deals;
     }
 
     private DestinationDeal destinationDealFrom(WebElement destinationEntry) {
-        String destinationCity = destinationEntry.findElement(By.className("destination-title")).getText();
-        String priceValue = destinationEntry.findElement(By.className("destination-price")).getText();
+        String destinationCity = $(destinationEntry).findBy(".destination-title").getText();
+        String priceValue = $(destinationEntry).findBy("destination-price").getText();
+
         int price = Integer.parseInt(priceValue.substring(1));
         return new DestinationDeal(destinationCity, price);
     }

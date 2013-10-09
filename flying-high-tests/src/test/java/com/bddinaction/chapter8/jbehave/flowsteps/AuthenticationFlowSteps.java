@@ -15,12 +15,7 @@ HomePage homePage;
 @Step
 public void enterEmailAndPasswordFor(FrequentFlyerMember user) {
     loginPage.open();
-    loginPage.enterEmailAndPassword(user.getEmail(), user.getPassword());
-}
-
-@Step
-public void signsIn() {
-    loginPage.signIn();
+    loginPage.signinAs(user.getEmail(), user.getPassword());
 }
 
 @Step

@@ -17,12 +17,9 @@ public class LoginPage extends PageObject {
 
     public MainMenu mainMenu;
 
-    public void enterEmailAndPassword(String userEmail, String userPassword) {
+    public void signinAs(String userEmail, String userPassword) {
         email.sendKeys(userEmail);
         password.sendKeys(userPassword);
-    }
-
-    public void signIn() {
         signin.click();
     }
 
