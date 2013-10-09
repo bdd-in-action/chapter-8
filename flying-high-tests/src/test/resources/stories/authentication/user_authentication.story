@@ -9,3 +9,4 @@ Scenario: Successful authentication
 Given Jane is a registered Frequent Flyer
 When Jane authenticates with a valid email address and password
 Then Jane should be given access to her account
+

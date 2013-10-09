@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <thucydides.version>0.9.212</thucydides.version>
+        <thucydides.version>0.9.213-SNAPSHOT</thucydides.version>
         <thucydides.jbehave.version>0.9.204</thucydides.jbehave.version>
         <gmavenVersion>1.4</gmavenVersion>
         <gmavenProviderSelection>2.0</gmavenProviderSelection>
@@ -30,14 +30,19 @@
             <version>${thucydides.jbehave.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.opera</groupId>
+            <artifactId>operadriver</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.6.1</version>
         </dependency>
         <dependency>
             <groupId>org.easytesting</groupId>
-            <artifactId>fest-assert</artifactId>
-            <version>1.4</version>
+            <artifactId>fest-assert-core</artifactId>
+            <version>2.0M10</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

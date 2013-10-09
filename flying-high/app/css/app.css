@@ -32,3 +32,25 @@
 .error {
     color: red;
 }
+
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+.featured-item {
+    padding: 4px;
+    border: 1px lavender solid;
+}
+
+.featured-item .item-title {
+    padding-left: 8px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.featured-item .item-price {
+    font-size: 1.5em;
+    color: red;
+}

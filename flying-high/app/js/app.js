@@ -6,5 +6,6 @@ angular.module('flyinghigh', ['flyinghigh.filters', 'flyinghigh.services', 'flyi
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/welcome', {templateUrl: './partials/welcome.html', controller: 'LoginCtrl'});
     $routeProvider.when('/home', {templateUrl: './partials/home.html', controller: 'HomeCtrl'});
+    $routeProvider.when('/book', {templateUrl: './partials/book.html', controller: 'BookCtrl'});
     $routeProvider.otherwise({redirectTo: '/welcome'});
   }]);

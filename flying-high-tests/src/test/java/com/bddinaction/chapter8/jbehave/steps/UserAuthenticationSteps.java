@@ -27,4 +27,14 @@ public class UserAuthenticationSteps {
     public void thenTheUserShouldBeGivenAccessToAccount(FrequentFlyerMember user) {
         registeredMember.verifyWelcomeMessageFor(user);
     }
+
+    @Given("$user has logged on")
+    public void aUserHasLoggedOnAs(FrequentFlyerMember user) {
+        registeredMember.enterEmailAndPasswordFor(user);
+        registeredMember.signsIn();
+    }
+
+    @When("$user views the home page")
+    public void whenAUserViewsTheHomePage() {}
+
 }

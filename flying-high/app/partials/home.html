@@ -14,7 +14,16 @@
         </div>
         <div class="col-md-9">
             <h2>Flying High Frequent Flyers</h2>
-            <h3>Welcome {{user.firstName}}</h3>
+            <h3 id="welcome-message">Welcome {{user.firstName}}</h3>
+
+            <h4>Check out our featured destinations:</h4>
+            <div>
+                <div class="featured">
+                    <div ng-repeat="item in featured" class="featured-destination">
+                        <img src="{{item.image}}" width="200px"><span class="destination-title">{{item.title}}</span> - <span class="destination-price">${{item.price}}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
